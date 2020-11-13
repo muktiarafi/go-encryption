@@ -5,17 +5,9 @@ import "testing"
 func TestVigenereEncryptUpper(t *testing.T) {
 	pt := "BELAJAR"
 	k := "SMART"
+	want := "TQLRCSD"
 
-	if c := VigenereEncrypt(pt, k); c != "TQLRCSD" {
-		t.Errorf("Expected TQLRCSD, got %s", c)
-	}
-}
-
-func TestVigenereLower(t *testing.T) {
-	pt := "belajar"
-	k := "smart"
-
-	if c := VigenereEncrypt(pt, k); c != "tqlrcsd" {
-		t.Errorf("Expected tqlrcsd, got %s", c)
+	if got := VigenereEncrypt(pt, k); got != want {
+		t.Errorf("Expected %q got %q instead", want, got)
 	}
 }
